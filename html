@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Holborn Movers — Safe, Secure & Professional Moving</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand-blue:#2f80ed;
+      --dark:#0f1724;
+      --muted:#6b7280;
+      --radius:12px;
+      --max-width:1100px;
+      --gap:20px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--dark);
+      background: #ffffff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    /* layout */
+    .container{
+      max-width:var(--max-width);
+      margin:40px auto;
+      padding:24px;
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:var(--gap);
+      align-items:start;
+    }
+
+    /* left hero / image */
+    .hero{
+      background:linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+      padding:28px;
+      border-radius:16px;
+      box-shadow:0 6px 22px rgba(45,65,90,0.08);
+      position:relative;
+      overflow:hidden;
+      min-height:420px;
+    }
+
+    .logo{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-bottom:8px;
+    }
+    .logo .mark{
+      width:56px;height:56px;border-radius:10px;background:var(--brand-blue);
+      display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-family:Montserrat, sans-serif;
+      font-size:18px;
+      box-shadow:0 6px 18px rgba(47,128,237,0.18);
+    }
+    .logo h1{font-size:18px;margin:0;font-weight:700;font-family:Montserrat, sans-serif;color:var(--dark)}
+    .logo p{margin:0;font-size:13px;color:var(--muted)}
+
+    .hero-grid{
+      display:flex;
+      gap:22px;
+      align-items:stretch;
+    }
+
+    /* image circle look */
+    .hero-visual{
+      flex:1 1 60%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:8px;
+    }
+    .image-frame{
+      width:100%;
+      max-width:520px;
+      min-height:300px;
+      border-radius:380px 380px 380px 380px / 260px;
+      overflow:hidden;
+      position:relative;
+      box-shadow:0 8px 30px rgba(16,24,40,0.06);
+    }
+    .image-frame img{
+      width:110%;
+      height:100%;
+      object-fit:cover;
+      transform:translateX(-8%);
+      display:block;
+    }
+
+    /* hero text */
+    .hero-blurb{
+      flex:1 1 40%;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:12px;
+    }
+    .hero-blurb h2{
+      margin:0;font-family:Montserrat, sans-serif;font-size:28px;color:var(--dark);
+      letter-spacing:0.2px;
+    }
+    .hero-blurb p.lead{
+      margin:0;color:var(--muted);font-size:15px;
+    }
+    .badges{
+      display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;
+    }
+    .badge{
+      background:#f3f8ff;color:var(--brand-blue);padding:8px 12px;border-radius:999px;font-weight:600;font-size:13px;border:1px solid rgba(47,128,237,0.06)
+    }
+
+    /* right column */
+    .side{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      position:relative;
+      min-height:400px;
+    }
+    .card{
+      background:white;border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(16,24,40,0.06);
+    }
+    .services h3,.security h3{margin:0 0 12px 0;font-family:Montserrat, sans-serif;color:var(--dark)}
+    .services ul{
+      list-style:none;padding:0;margin:0;display:grid;gap:10px;
+    }
+    .services li{
+      display:flex;align-items:center;gap:10px;padding:8px;border-radius:8px;background:#fbfdff;
+      font-weight:600;color:var(--dark)
+    }
+
+    .security p{margin:0;color:var(--muted)}
+    .security .items{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+    .security .item{display:flex;gap:10px;align-items:flex-start}
+    .item .icon{
+      min-width:44px;height:44px;border-radius:8px;background:#f0f7ff;display:flex;align-items:center;justify-content:center;
+      font-weight:700;color:var(--brand-blue)
+    }
+
+    /* contact */
+    .contact-cta{
+      display:flex;flex-direction:column;gap:10px;
+    }
+    .phone-list{display:flex;flex-direction:column;gap:6px}
+    .phone{
+      display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:10px;background:#f7fbff;border:1px solid rgba(47,128,237,0.06)
+    }
+    .phone .num{font-weight:700}
+    .phone .actions{display:flex;gap:8px}
+    .btn{
+      background:var(--brand-blue);color:white;padding:10px 14px;border-radius:10px;border:none;font-weight:700;cursor:pointer;
+      display:inline-flex;gap:10px;align-items:center;text-decoration:none;
+    }
+    .btn.secondary{background:#eef6ff;color:var(--brand-blue);font-weight:700;border:1px solid rgba(47,128,237,0.06)}
+
+    /* contact form */
+    form.contact-form{display:grid;gap:10px}
+    form .row{display:flex;gap:10px}
+    input,textarea,select{
+      padding:10px;border-radius:8px;border:1px solid #e6edf6;font-size:14px;width:100%;
+      background:#fff;outline:none;
+    }
+    textarea{min-height:110px;resize:vertical}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* footer CTA sticky */
+    .sticky-cta{
+      position:fixed;right:18px;bottom:18px;z-index:999;display:flex;gap:10px;
+    }
+    .sticky-cta .call{
+      background:linear-gradient(180deg,var(--brand-blue),#246dcb);color:white;padding:14px 16px;border-radius:999px;box-shadow:0 8px 30px rgba(47,128,237,0.18);
+      display:flex;gap:10px;align-items:center;text-decoration:none;font-weight:700;
+    }
+
+    footer{max-width:var(--max-width);margin:40px auto;padding:10px 24px;color:var(--muted);font-size:14px}
+
+    /* responsive */
+    @media (max-width:1000px){
+      .container{grid-template-columns:1fr; padding:18px}
+      .hero{min-height:360px}
+      .image-frame img{transform:none}
+    }
+    @media (max-width:520px){
+      .hero-grid{flex-direction:column}
+      .hero-blurb h2{font-size:22px}
+      .logo .mark{width:48px;height:48px}
+      .side{gap:12px}
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container" role="main">
+    <!-- LEFT: Hero / Image -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="logo" role="banner">
+        <div class="mark">HM</div>
+        <div>
+          <h1>Holborn Movers</h1>
+          <p>Professional handling • Secure transport • Peace of mind</p>
+        </div>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-visual" aria-hidden="true">
+          <div class="image-frame" role="img" aria-label="Packed furniture and moving boxes">
+            <!-- Replace the image path below with your actual image (assets/flyer.jpg) -->
+            <img src="assets/flyer.jpg" alt="Chair wrapped for moving and stacked boxes — showing careful packing">
+          </div>
+        </div>
+
+        <div class="hero-blurb">
+          <h2 id="hero-title">Stressed about moving? We’ve got you covered.</h2>
+          <p class="lead">Holborn Movers offers commercial & residential moving, office relocations, long-distance transfers and full-service packaging. We use secure handling, professional packing materials, trained staff and trackable scheduling to keep your move safe and on-time.</p>
+
+          <div class="badges" aria-hidden="true">
+            <div class="badge">Insured & Certified</div>
+            <div class="badge">Careful Packaging</div>
+            <div class="badge">Timely Delivery</div>
+          </div>
+
+          <div style="margin-top:12px;">
+            <a class="btn" href="tel:+254701900777" aria-label="Call Holborn Movers">📞 Call Now — 0701900777</a>
+            <a class="btn secondary" href="#contact" style="margin-left:10px">📩 Get a Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT: Services / Security / Contact -->
+    <aside class="side" aria-labelledby="side-title">
+      <div class="card services" aria-describedby="services-desc">
+        <h3 id="side-title">Our Services</h3>
+        <ul id="services-desc">
+          <li>🏠 Commercial & Residential Moving</li>
+          <li>🛣️ Long Distance Relocation</li>
+          <li>💼 Office Relocation & IT-safe transfer</li>
+          <li>📦 Full-Service Packaging</li>
+          <li>🔧 Fragile & Specialty Item Handling</li>
+        </ul>
+      </div>
+
+      <div class="card security">
+        <h3>Proper Handling & Security</h3>
+        <p class="small">We prioritize secure handling and accountability. Below are the protections we offer for every move.</p>
+
+        <div class="items" role="list">
+          <div class="item" role="listitem">
+            <div class="icon">🔒</div>
+            <div>
+              <strong>Insured Transport</strong>
+              <div class="small">Insurance options and documented condition reports before & after each move.</div>
+            </div>
+          </div>
+
+          <div class="item" role="listitem">
+            <div class="icon">📦</div>
+            <div>
+              <strong>Professional Packing</strong>
+              <div class="small">High-quality materials, labeled boxes, and secure wrapping for fragile items.</div>
+            </div>
+          </div>
+
+          <div class="item" role="listitem">
+            <div class="icon">🧾</div>
+            <div>
+              <strong>Chain-of-Custody</strong>
+              <div class="small">Tracking and signed handover forms to confirm item handling at every stage.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card contact" id="contact" aria-labelledby="contact-title">
+        <h3 id="contact-title">Contact Us Today</h3>
+        <p class="small">Quick contact options — call, WhatsApp or send details using the form. We'll respond within business hours.</p>
+
+        <div class="phone-list" aria-hidden="false">
+          <div class="phone">
+            <div>
+              <div class="small">Primary</div>
+              <div class="num">0701900777</div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="tel:+254701900777">Call</a>
+              <a class="btn secondary" href="https://wa.me/254701900777" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+          </div>
+
+          <div class="phone">
+            <div>
+              <div class="small">Support</div>
+              <div class="num">0722976976</div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="tel:+254722976976">Call</a>
+              <a class="btn secondary" href="https://wa.me/254722976976" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+          </div>
+
+          <div class="phone">
+            <div>
+              <div class="small">Sales</div>
+              <div class="num">0701430781</div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="tel:+254701430781">Call</a>
+              <a class="btn secondary" href="https://wa.me/254701430781" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+        <hr style="margin:12px 0;border:none;border-top:1px solid #f2f6fb">
+
+        <!-- contact form: simple mailto fallback -->
+        <form class="contact-form" onsubmit="return submitContact(event)" aria-label="Contact form">
+          <input id="name" name="name" type="text" placeholder="Your name" required>
+          <input id="email" name="email" type="email" placeholder="Email address" required>
+          <input id="phone" name="phone" type="tel" placeholder="Phone (optional)">
+          <textarea id="message" name="message" placeholder="Tell us about your move (date, origin, destination, special items)" required></textarea>
+          <div style="display:flex;gap:8px;">
+            <button class="btn" type="submit">Send Request</button>
+            <button class="btn secondary" type="button" onclick="openWhatsAppQuick()">Quick WhatsApp</button>
+          </div>
+          <div id="form-status" class="small" aria-live="polite" style="margin-top:6px;color:var(--muted)"></div>
+        </form>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Sticky CTA -->
+  <div class="sticky-cta" aria-hidden="false">
+    <a class="call" href="tel:+254701900777">📞 0701900777</a>
+    <a class="btn" href="#contact">📩 Quote</a>
+  </div>
+
+  <footer>
+    © <strong>Holborn Movers</strong> — Insured & Professional Moving Services • Nairobi, Kenya • <span class="small">You can replace the image at <code>assets/flyer.jpg</code></span>
+  </footer>
+
+  <script>
+    // Basic form "mailto" fallback with small validation and UX
+    function submitContact(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name || !email || !message){
+        showStatus('Please fill required fields.', true);
+        return false;
+      }
+
+      // prepare mailto
+      const subject = encodeURIComponent('Moving Inquiry from ' + name);
+      const body = encodeURIComponent(
+        'Name: ' + name + '\\n' +
+        'Email: ' + email + '\\n' +
+        'Phone: ' + phone + '\\n\\n' +
+        'Message:\\n' + message
+      );
+
+      // open mail client - falls back to same-window mailto
+      const mailTo = 'mailto:zion.kiwiamarshall@gmail.com' // <-- replace with your business email
+                    + '?subject=' + subject + '&body=' + body;
+
+      // notify
+      showStatus('Opening email client... If nothing opens, copy/paste your message to email or WhatsApp.', false);
+
+      // open mailto
+      window.location.href = mailTo;
+      return false;
+    }
+
+    function openWhatsAppQuick(){
+      const waNumber = '254701900777'; // main number without leading zero
+      const text = encodeURIComponent('Hello Holborn Movers, I would like a quote for a move. Please advise next steps.');
+      const url = 'https://wa.me/' + waNumber + '?text=' + text;
+      window.open(url, '_blank');
+    }
+
+    function showStatus(text, isError){
+      const el = document.getElementById('form-status');
+      el.style.color = isError ? '#b00020' : 'var(--muted)';
+      el.textContent = text;
+    }
+
+    // Accessibility: keyboard shortcut "c" opens contact form
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'c' && !e.metaKey && !e.ctrlKey && !e.altKey){
+        document.querySelector('[href="#contact"]').scrollIntoView({behavior:'smooth',block:'center'});
+        const firstInput = document.getElementById('name');
+        if(firstInput) firstInput.focus({preventScroll:true});
+      }
+    });
+  </script>
+</body>
+</html>
